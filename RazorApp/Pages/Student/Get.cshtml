@@ -1,0 +1,27 @@
+@page
+@model RazorApp.Pages.Student.Get
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Birthdate</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{
+        var count = 1;
+    }
+    @foreach (var student in Model.getStudentDTO)
+    {
+        <tr>
+            <th scope="row">@(count++)</th>
+            <td>@student.FirstName</td>
+            <td>@student.LastName</td>
+            <td>@student.BirthDate.ToString("dd-MM-yyyy")</td>
+        </tr>
+    }
+    </tbody>
+</table>

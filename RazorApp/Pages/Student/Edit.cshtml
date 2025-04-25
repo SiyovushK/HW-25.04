@@ -1,0 +1,30 @@
+@page "{id:int}"
+@model RazorApp.Pages.Student.Edit
+
+<form method="post">
+    <input asp-for="updateStudent.StudentId" type="hidden"/>
+    <div class="form-group">
+        <label for="exampleInputFirst1">First name</label>
+        <input asp-for="updateStudent.FirstName" type="text" class="form-control" id="exampleInputFirst1" placeholder="First name">
+        <span asp-validation-for="updateStudent.FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputLast1">Last name</label>
+        <input asp-for="updateStudent.LastName" type="text" class="form-control" id="exampleInputLast1" placeholder="Last name">
+        <span asp-validation-for="updateStudent.LastName"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputBirthdate1">Birthdate</label>
+        <input asp-for="updateStudent.BirthDate" type="date" class="form-control" id="exampleInputBirthdate1" placeholder="Birthdate">
+        <span asp-validation-for="updateStudent.BirthDate"></span>
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div style="text-align: center">
+    @foreach (var message in Model.Messages)
+    {
+        <p>@message</p>
+    }
+</div>
